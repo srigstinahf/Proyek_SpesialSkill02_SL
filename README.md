@@ -145,26 +145,6 @@ Model digunakan untuk memprediksi arah harga pada hari perdagangan setelah data 
 
 Probabilitas yang hanya sedikit di atas 50% menunjukkan bahwa model tidak yakin terhadap prediksinya.
 
-## Insight & Rekomendasi Pengembangan
-
-Berdasarkan hasil evaluasi, terdapat beberapa catatan dan rekomendasi untuk pengembangan lebih lanjut:
-
-1. **Sinyal Prediktif Masih Lemah**
-
-   Dengan akurasi di bawah baseline dan AUC-ROC 0,6415, indikator teknikal yang digunakan belum cukup untuk membedakan hari naik dan turun secara konsisten. Hasil ini wajar mengingat pergerakan harga harian saham umumnya sangat *noisy*.
-
-2. **Menggunakan Validasi yang Sesuai Data Time Series**
-
-   Evaluasi saat ini hanya menggunakan satu kali pembagian data (139 hari uji). Disarankan menggunakan `TimeSeriesSplit` agar performa dapat dinilai pada beberapa periode waktu dan hasilnya lebih stabil.
-
-3. **Memperkaya Fitur dan Menyesuaikan Model**
-
-   Dapat dicoba fitur tambahan (misalnya data makroekonomi, sentimen berita, atau indeks pasar seperti IHSG), *hyperparameter tuning*, atau model lain seperti Gradient Boosting, serta penyesuaian *threshold* klasifikasi untuk menyeimbangkan precision dan recall.
-
-4. **Menggunakan Metrik yang Relevan dengan Tujuan Trading**
-
-   Akurasi saja kurang mencerminkan nilai praktis model. Evaluasi lanjutan dapat mencakup *backtesting* strategi, imbal hasil, dan *drawdown*, termasuk biaya transaksi.
-
 ## Kesimpulan
 
 Proyek ini menunjukkan penerapan *Supervised Learning* untuk memprediksi arah pergerakan harga saham BBCA, mulai dari pengambilan data, rekayasa fitur, pembagian data kronologis, pelatihan model, evaluasi, hingga simulasi prediksi.
